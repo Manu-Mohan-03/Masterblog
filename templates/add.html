@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Masterblog - Create a Post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Masterblog</h1>
+    <h2>Create a New Blog Post</h2>
+
+    <form method="POST" action="/add">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="author">Your Name:</label><br>
+        <input type="text" id="author" name="author" required><br><br>
+
+        <label for="content">Blog Content:</label><br>
+        <textarea id="content" name="content" rows="6" cols="40" required></textarea><br><br>
+
+        <button type="submit">Publish</button>
+    </form>
+</body>
+</html>

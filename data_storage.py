@@ -1,5 +1,4 @@
 import json
-from textwrap import indent
 
 JSON_FILE = 'data/blogs.json'
 
@@ -34,3 +33,25 @@ def delete_data(post_id):
             blog_posts.remove(blog)
             break
     save_data(blog_posts)
+
+
+def fetch_post_by_id(post_id):
+    blog_posts = load_data()
+    for blog in blog_posts:
+        if blog['id'] == post_id:
+            return blog
+    return None
+
+
+def update_data(post_id, new_blog):
+    blog_posts = load_data()
+    for blog in blog_posts:
+        if blog['id'] == post_id:
+            old_blog = blog
+            break
+    index = blog_posts.index(old_blog)
+    blog_posts[index] = new_blog
+    save_data(blog_posts)
+
+
+

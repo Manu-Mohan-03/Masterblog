@@ -15,8 +15,11 @@
         <h2>{{ blog["title"] }}</h2>
         <p><em>Written by {{ blog["author"] }}</em></p>
         <p>{{ blog["content"] }}</p>
-        <form method="DELETE" action="/delete/{{ blog['id'] }}">
-            <button type="delete">Delete</button>
+        <form action="/delete/{{ blog['id'] }}">
+            <button type="submit">Delete</button>
+        </form>
+        <form action="/update/{{ blog['id'] }}">
+            <button type="submit">Edit</button>
         </form>
     </div>
     {% endfor %}

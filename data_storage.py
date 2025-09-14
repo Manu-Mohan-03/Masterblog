@@ -58,11 +58,8 @@ def update_data(new_blog):
     # Fetching the old blog with same ID
     for blog in blog_posts:
         if blog['id'] == new_blog['id']:
-            old_blog = blog
-            # To find the index of old blog
-            index = blog_posts.index(old_blog)
-            # Adding new_blog @ same index
-            blog_posts[index] = new_blog
+            # update the dictionary with new details
+            blog.update(new_blog)
             # Saving JSON
             save_data(blog_posts)
             return True
